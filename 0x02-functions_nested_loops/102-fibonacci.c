@@ -11,11 +11,11 @@ int main(void)
 	long int j = 2;
 	long int k, x;
 
-	printf("%d, %d", i, j);
+	printf("%ld, %ld", i, j);
 	for (x = 2; x < 50; x++)
 	{
 		k = i + j;
-		printf(", %d", k);
+		printf(", %ld", k);
 		i = j;
 		j = k;
 	}
