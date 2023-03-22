@@ -15,9 +15,9 @@ int main(void)
 	for (x = 2; x < 50; x++)
 	{
 		k = i + j;
+		printf(", %d", k);
 		i = j;
 		j = k;
-		printf(", %d", k);
 	}
 	printf("\n");
 	return (0);
