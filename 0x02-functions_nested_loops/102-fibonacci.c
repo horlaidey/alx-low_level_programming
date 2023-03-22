@@ -7,9 +7,9 @@
 
 int main(void)
 {
-	int i = 1;
-	int j = 2;
-	int k, x;
+	long int i = 1;
+	long int j = 2;
+	long int k, x;
 
 	printf("%d, %d", i, j);
 	for (x = 2; x < 50; x++)
