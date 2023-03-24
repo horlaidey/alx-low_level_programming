@@ -3,7 +3,7 @@
 int _putchar(char);
 int _isupper(int c);
 int _isdigit(int c);
-nt mul(int, int);
+int mul(int, int);
 
 
 #endif
