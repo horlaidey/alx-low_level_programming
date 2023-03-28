@@ -8,6 +8,7 @@
 int _atoi(char *s)
 {
 	int i = 0;
+	char *str;
 
 	while (i >= 0)
 	{
@@ -17,8 +18,12 @@ int _atoi(char *s)
 		}
 		if ((*(s + i) >= 48) && (*(s + i) <= 57))
 		{
-			return (s[i]);
+			int j = 0;
+
+			*(str + j) = *(s + i);
+			j++;
 		}
 		i++;
 	}
+	return (str);
 }
