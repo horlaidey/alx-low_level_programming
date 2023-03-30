@@ -23,7 +23,7 @@ char *rot13(char *s)
 				break;
 			}
 		}
-		count++;
+		i++;
 	}
 	return (s);
 }
