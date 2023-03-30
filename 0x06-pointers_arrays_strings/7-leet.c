@@ -21,6 +21,7 @@ char *leet(char *s)
 			if (*(s + count) == cap[i] || *(s + count) == low[i])
 			{
 				*(s + count) = check[i];
+				break;
 			}
 		}
 		count++
