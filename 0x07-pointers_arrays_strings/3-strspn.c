@@ -9,14 +9,28 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i = 0;
+	unsigned int k = 0;
+	unsigned int j;
+	int bully;
 
 	while (*(s + i) != '\0')
 	{
-		if (*(s + i) == *accept)
+		for (j = 0; *(accept + j) != '\0'; j++)
+			if (*(s + i) == *(accept + j))
+			{
+				k += 1;
+				bully = 1;
+				break;
+			}
+			else
+			{
+				bully = 0;
+			}
+		if (bully == 0)
 		{
 			break;
 		}
 		i++;
 	}
-	return (i + 1);
+	return (k);
 }
