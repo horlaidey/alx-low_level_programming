@@ -9,25 +9,24 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	char *hayclone;
-	char *needclone;
+	char *hay;
+	char *need;
 
 	while (*haystack != '\0')
 	{
-		hayclone = haystack;
-		needclone = needle;
+		hay = haystack;
+		need = needle;
 
-		while (*haystack != '\0' && *needclone != '\0'
-&& *haystack == needclone)
+		while (*haystack != '\0' && *need != '\0' && *haystack == need)
 		{
 			haystack++;
-			needclone++;
+			need++;
 		}
-		if (!*needclone)
+		if (!*need)
 		{
-			return (hayclone);
+			return (hay);
 		}
-		haystack = hayclone + 1;
+		haystack = hay + 1;
 	}
 	return ('\0');
 }
