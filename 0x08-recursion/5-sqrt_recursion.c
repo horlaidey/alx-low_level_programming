@@ -12,7 +12,7 @@ int _eval(int i, int n, int j)
 	int m;
 
 	m = (i + j) / 2;
-	if ((i - j == 1 || i - j == -1) && m * m != n)
+	if (j - m == 0)
 	{
 		return (-1);
 	}
