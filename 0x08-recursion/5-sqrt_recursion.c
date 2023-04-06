@@ -7,9 +7,9 @@
  * Return: integer return
  */
 
-int _eval(int i, int n, int j)
+int _eval(long int i, int n, long int j)
 {
-	int m;
+	long int m;
 
 	m = (i + j) / 2;
 	if (j - m == 0)
@@ -38,9 +38,13 @@ int _eval(int i, int n, int j)
 
 int _sqrt_recursion(int n)
 {
-	int j;
-	int i = n / 2;
+	long int j;
+	long int i = n / 2;
 
+	if (n == 1)
+	{
+		return (1);
+	}
 	if (n < 0)
 	{
 		return (-1);
