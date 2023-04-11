@@ -50,15 +50,16 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	while (m < k)
+	while (m < i)
 	{
-		if (m >= i)
-		{
-			ptr[m] = *(s2 + n);
-			n++;
-		}
 		ptr[m] = *(s1 + m);
 		m++;
+	}
+	while (n < j)
+	{
+		ptr[m] = *(s2 + n);
+		m++;
+		n++;
 	}
 	ptr[k] = '\0';
 	return (ptr);
