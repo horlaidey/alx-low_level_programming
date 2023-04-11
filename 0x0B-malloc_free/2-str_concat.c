@@ -27,7 +27,7 @@ int _count(char *s)
 
 char *str_concat(char *s1, char *s2)
 {
-	int i, j, k, m;
+	int i, j, k, m = 0, n = 0;
 	char *ptr;
 
 	if (s1 == NULL)
@@ -38,6 +38,10 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
+	if (s1 == NULL && s2 == NULL)
+	{
+		return (NULL);
+	}
 	i = _count(s1);
 	j = _count(s2);
 	k = i + j;
@@ -46,13 +50,15 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	for (m = 0; m < i; m++)
+	while (m < k)
 	{
+		if (m >= i)
+		{
+			ptr[m] = *(s2 + n);
+			n++;
+		}
 		ptr[m] = *(s1 + m);
-	}
-	for (m = 0 ; m < j; m++)
-	{
-		ptr[m + i] = *(s2 + j);
+		m++;
 	}
 	ptr[k] = '\0';
 	return (ptr);
