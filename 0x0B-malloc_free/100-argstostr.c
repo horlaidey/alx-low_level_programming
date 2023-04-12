@@ -15,34 +15,7 @@ int _count(char *s)
 	}
 	return (i);
 }
-/**
- * _concat - join two string together and return the result
- * @s1: the first string
- * @s2: the second string
- * Return: The concatenated string
- */
 
-char *_concat(char *s1, char *s2)
-{
-	int i, j, n, m = 0;
-
-	if (s1 == NULL)
-	{
-		s1 = "";
-	}
-	i = _count(s1);
-	j = _count(s2);
-	n = i + j;
-	*(s1 + j) = '\n';
-	while (*(s2 + m) != '\0')
-	{
-		j++;
-		*(s1 + j) = *(s2 + m);
-		m++;
-	}
-	*(s1 + n) = '\n';
-	return (s1);
-}
 /**
  * argstostr - convert streams of arguments to string
  * @ac: the argument count
@@ -52,17 +25,36 @@ char *_concat(char *s1, char *s2)
 
 char *argstostr(int ac, char **av)
 {
-	int i;
-	char *ptr = "";
+	int i, m = 0;
+	int n, j, k, x = 0;
+	char *ptr;
 
-	av = malloc(ac * sizeof(char *));
+
 	if (ac == 0 || av == NULL)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < ac; i++)
+	for (i = 1; i < ac; i++)
 	{
-		_concat(ptr, av[i]);
+		m += _count(av[i]);
+	}
+	ptr = malloc(m * sizeof(char) + 1);
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
+	for (j = 1; j < ac; j++)
+	{
+		n = _count(av[j]);
+		for (k = 0; k <= n; k++)
+		{
+			ptr[x + k] = *(av[j] + k);
+			if (k == n)
+			{
+				ptr[x + k] = '\n';
+			}
+		}
+		x += k;
 	}
 	return (ptr);
 }
