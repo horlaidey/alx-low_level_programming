@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "dog.h"
 /**
  * new_dog - create a function of type dog_t
@@ -16,7 +17,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	ptr = malloc(sizeof(dog_t));
 	if (ptr == NULL)
+	{
 		return (NULL);
+		free(ptr);
+	}
 	ptr->name = name;
 	ptr->age = age;
 	ptr->owner = owner;
