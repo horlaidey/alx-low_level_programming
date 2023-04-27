@@ -2,7 +2,7 @@
 
 /**
  * print_list - prints the content of a linked list
- * h: a pointer to a struct list
+ * @h: a pointer to a struct list
  *
  * Return: The number of nodes in the list
  */
