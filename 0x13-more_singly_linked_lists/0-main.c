@@ -21,7 +21,7 @@ int main(void)
 	add_nodeint_end(&head, 98);
 	n = print_listint(head);
 	printf("-> [%lu]\n", n);
-	free_listint(head);
-	head = NULL;
+	free_listint2(&head);
+	printf("%p\n", (void *)head);
 	return (0);
 }
