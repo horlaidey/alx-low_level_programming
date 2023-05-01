@@ -9,14 +9,17 @@
 int main(void)
 {
 	listint_t *head;
+	size_t n;
 
 	head = NULL;
-	add_nodeint(&head, 0);
-	add_nodeint(&head, 1);
-	add_nodeint(&head, 2);
-	add_nodeint(&head, 3);
-	add_nodeint(&head, 4);
-	add_nodeint(&head, 98);
-	print_listint(head);
+	add_nodeint_end(&head, 0);
+	add_nodeint_end(&head, 1);
+	add_nodeint_end(&head, 124);
+	add_nodeint_end(&head, 2);
+	add_nodeint_end(&head, 3);
+	add_nodeint_end(&head, 4);
+	add_nodeint_end(&head, 98);
+	n = print_listint(head);
+	printf("-> [%lu]\n", n);
 	return (0);
 }
