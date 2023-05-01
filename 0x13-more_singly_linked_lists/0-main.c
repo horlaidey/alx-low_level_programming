@@ -9,7 +9,7 @@
 int main(void)
 {
 	listint_t *head;
-	size_t n;
+	int n;
 
 	head = NULL;
 	add_nodeint_end(&head, 0);
@@ -19,8 +19,13 @@ int main(void)
 	add_nodeint_end(&head, 3);
 	add_nodeint_end(&head, 4);
 	add_nodeint_end(&head, 98);
-	n = print_listint(head);
-	printf("-> [%lu]\n", n);
+	print_listint(head);
+	n = pop_listint(&head);
+	printf("- %d\n", n);
+	print_listint(head);
+	n = pop_listint(&head);
+	printf("- %d\n", n);
+	print_listint(head);
 	free_listint2(&head);
 	printf("%p\n", (void *)head);
 	return (0);
