@@ -11,11 +11,6 @@ size_t print_listint(const listint_t *h)
 	size_t count;
 	listint_t *ptr = NULL;
 
-	if (h == NULL)
-	{
-		printf("Empty Node\n");
-		return (0);
-	}
 	count = 0;
 	ptr = (listint_t *) h;
 
